@@ -162,7 +162,8 @@ public class MainActivity extends AppCompatActivity implements Runnable {
         });
 
         try {
-            mModule = PyTorchAndroid.loadModuleFromAsset(getAssets(), "yolov5s.torchscript.pt");
+            //该ptl文件需要从https://github.com/samrychan/yolov5或者https://github.com/jeffxtang/yolov5/fork的export.py中导出才不会报错
+            mModule = PyTorchAndroid.loadModuleFromAsset(getAssets(), "yolov5s.torchscript.jeffxtang.ptl");
             BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("classes.txt")));
             String line;
             List<String> classes = new ArrayList<>();
